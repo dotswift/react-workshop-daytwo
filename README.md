@@ -1,5 +1,6 @@
 ## React Workshop (Second Session)
 
+### • AJAX
 ### • Two way binding
 ### • Helper functions
 ### • User input  & forms
