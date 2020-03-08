@@ -10,3 +10,5 @@
 ### • Advantages of Immutability 
 ### • CRUD Operations
 ### • Callback props
+### • Functions vs. Classes 
+### • Hooks 

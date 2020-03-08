@@ -7,11 +7,9 @@ class WeatherForm extends Component {
     conditions: "Sunny",
     highF: 72,
     lowF: 23,
-    list: [
-      { conditions: "Rainy", high: 62, low: 55 },
-      { conditions: "Cloudy", high: 52, low: 35 },
-    ]
   }
+
+
 
   handleChangeConditions = e => {
     this.setState({
@@ -29,20 +27,21 @@ class WeatherForm extends Component {
     e.preventDefault();
     const newItem = {
       conditions: this.state.conditions,
-      high: this.state.highF,
-      low: this.state.lowF
+      highF: this.state.highF,
+      lowF: this.state.lowF
     };
+    console.log(this.props)
+    this.props.onAdd(newItem);
 
-    // return an object that gives new value (to set state)
-    this.setState(prev => {
-      const newList = prev.list.slice(0);
-      newList.push(newItem);
-      return {
-        list: newList
-      };
+    // this.setState({
+    //   condtiions: "",
+    //   high: 0,
+    //   low: 0
 
-    });
-  }
+    // });
+
+
+   }
 
   render() {
     return (
@@ -64,9 +63,7 @@ class WeatherForm extends Component {
           <p>
             <button type="submit">Add</button></p>
         </form>
-        {this.state.list.map(data =>
-          <Weather conditions={data.conditions} highF={data.high} lowF={data.low} />
-        )}
+
       </div>
     );
   }
