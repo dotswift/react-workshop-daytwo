@@ -18,6 +18,7 @@ class Inbox extends Component {
       newList.splice(index, 1);
       return { messages: newList };
     });
+    console.log("delete handled")
   }
 
   handleMarkAsRead = (index, read) => {
