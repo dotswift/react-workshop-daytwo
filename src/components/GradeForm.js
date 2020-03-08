@@ -7,8 +7,8 @@ class GradeForm extends Component {
         label: 'JavaScript Quiz',
         score: '3',
         grades: [
-            { label: 'Important Test', score: 20, total: 20, passing: true },
-            { label: 'Nuclear Energy Exam', score: 1, total: 20, passing: false }
+            { label: 'Important Test', score: 20},
+            { label: 'Nuclear Energy Exam', score: 1}
         ]
 
     }
@@ -25,9 +25,17 @@ class GradeForm extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
+        let pass
+
+        if (this.state.score >= 12) {
+            pass = true
+        }
+    
         const newItem = {
           label: this.state.label,
-          score: this.state.score
+          score: this.state.score,
+          passing: pass
+          
         };
     
         // return an object that gives new value (to set state)
@@ -63,7 +71,10 @@ class GradeForm extends Component {
                     
                 </p>
                 
-                {this.state.grades.map(data => <Grade label={data.label} score={data.score} total={20} /> )}
+                {this.state.grades.map(data => {
+                    const passInLoop = data.score >= 12;
+                    return <Grade label={data.label} score={data.score} total={20} passing={passInLoop}/>
+                } )}
 
             </div>
         )
