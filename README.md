@@ -8,3 +8,5 @@
 ### • Default behaviors (when to prevent)
 ### • Modifying lists in state (replace)
 ### • Advantages of Immutability 
+### • CRUD Operations
+### • Callback props

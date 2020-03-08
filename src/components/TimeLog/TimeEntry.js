@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {formatTime, diffInSeconds, formatDiffInSeconds } from '../../timeUtil';
+import { formatTime, diffInSeconds, formatDiffInSeconds } from '../../timeUtil';
 
 class TimeEntry extends Component {
     render() {
-        let seconds = diffInSeconds(this.props.end, this.props.start); 
+        let seconds = diffInSeconds(this.props.end, this.props.start);
         return (
             <div className="TimeEntry TimeLog__row">
                 <span>{formatDiffInSeconds(seconds)}</span>
