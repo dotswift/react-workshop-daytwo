@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './TimeLog.css';
 import { diffInSeconds, formatDiffInSeconds } from '../../timeUtil';
+import TimeEntry from './TimeEntry'; 
 
 class TimeLog extends Component {
 
@@ -22,7 +23,9 @@ class TimeLog extends Component {
         <div className="TimeLog__headings TimeLog__row">
           <span>Amount</span><span>Start</span><span>End</span>
         </div>
-
+        <div>
+        <TimeEntry/>
+          </div>
 
         <div className="TimeLog__totals TimeLog__row">
           <span>{formatDiffInSeconds(total)} <span className="TimeLog__label">Total</span></span>
