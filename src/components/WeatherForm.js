@@ -61,7 +61,8 @@ class WeatherForm extends Component {
             <input value={this.state.highF} type="number"
               onChange={this.handleChangeHighF} />
           </p>
-          <p><button type="submit">Add</button></p>
+          <p>
+            <button type="submit">Add</button></p>
         </form>
         {this.state.list.map(data =>
           <Weather conditions={data.conditions} highF={data.high} lowF={data.low} />

@@ -10,9 +10,11 @@ import TimeLog from './components/TimeLog/TimeLog';
 function App() {
   return (
     <div className="App">
+        <Inbox/>
       <TimeLog/>
       <WeatherForm/>
       <GradeForm/>
+    
     </div>
   );
 }
