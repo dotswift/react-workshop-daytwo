@@ -24,7 +24,7 @@ class TimeLog extends Component {
           <span>Amount</span><span>Start</span><span>End</span>
         </div>
         <div>
-        <TimeEntry/>
+        <TimeEntry start={new Date('1995-12-17T03:24:00')} end={new Date('1995-12-17T10:44:23')}/>
           </div>
 
         <div className="TimeLog__totals TimeLog__row">
