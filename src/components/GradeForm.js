@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import Grade from './Grade';
 
-class WeatherForm extends Component {
+class GradeForm extends Component {
 
     state = {
         label: 'JavaScript Quiz',
-        score: '3'
+        score: '3',
+        grades: [
+            { label: 'Important Test', score: 20 },
+            { label: 'Nuclear Energy Exam', score: 1 }
+        ]
+
     }
     handleChangeLabel = e => {
         this.setState({
@@ -15,55 +20,33 @@ class WeatherForm extends Component {
     handleChangeScore = e => {
         this.setState({
             score: e.target.value,
-        
+
         });
     }
 
-
-
-
-
     render() {
-            let pass
+        let pass
 
-            if (this.state.score >= 12){
-                pass = true
-            }
-
+        if (this.state.score >= 12) {
+            pass = true
+        }
 
         return (
-
-            <div className="WeatherForm">
+            <div className="GradeForm">
                 <Grade label={this.state.label} score={this.state.score} total={20} passing={pass}></Grade>
                 <p>
                     <form>
                         <label>Label</label>
                         <input value={this.state.label} onChange={this.handleChangeLabel} ></input>
                         <label>Score</label>
-                        <input value={this.state.score} onChange={this.handleChangeScore} type="number"></input>
+                        <input value={this.state.score} onChange={this.handleChangeScore} type="range" id="points" name="points" min="0" max="20"></input>
 
                     </form>
                 </p>
+
+                {this.state.grades.map(data => <Grade label={data.label} score={data.score} total={20} /> )}
+
             </div>
-
-            // <div>
-            //     <h3>{this.state.label}</h3>
-            //     <b>Score {this.state.score}  </b> of {this.state.total}
-            //     <form>
-
-            //         <p>  <label>Score</label>
-
-            //         <p> <label>Percentage</label></p>
-            //         <p><label>Passing?</label></p>
-            //         <label> Label </label>
-            //             <input value={this.state.label} onChange={this.handleChangeConditions}></input>
-            //         <label> Score </label>
-            //             <input value={this.state.score} onChange={this.handleChangeConditions}></input></p>
-            //     </form>
-            // </div >
         )
     }
-
-
-
-} export default WeatherForm;
+} export default GradeForm;

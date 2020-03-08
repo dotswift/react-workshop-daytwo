@@ -1,5 +1,5 @@
-### React Workshop (Day Two)
+## React Workshop (Day Two)
 
-# • Two way binding
-# • Helper functions
-# • User input 
+### • Two way binding
+### • Helper functions
+### • User input  & Forms
