@@ -19,13 +19,28 @@ class Inbox extends Component {
       return { messages: newList };
     });
   }
+
+  handleMarkAsRead = (index, read) => {
+    this.setState(prev => {
+      const newList = prev.messages.slice(0);
+      const newItem = Object.assign({}, prev.messages[index]);
+      newItem.read = read;
+      newList[index] = newItem;
+      return { messages: newList };
+    });
+  }
+
   render() {
     return (
       <div className="Inbox box">
         <h3>Messages</h3>
         <ul>
-        {this.state.messages.map((message, i) => 
-            <Message message={message} onDelete={() => this.handleDelete(i)} />
+          {this.state.messages.map((message, i) =>
+            <Message message={message}
+              onDelete={() => this.handleDelete(i)}
+              onMark={(read) => this.handleMarkAsRead(i, read)}
+
+            />
           )}
         </ul>
       </div>

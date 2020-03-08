@@ -10,6 +10,7 @@ class Message extends Component {
         <span className="Message__text">{this.props.message.text}</span>
         <button>Mark {this.props.message.read ? "Read" : "Unread"}</button>
         <button onClick={this.props.onDelete}>Delete</button>
+        <button onClick={()=> this.props.onMark(!this.props.message.read)}>Mark</button>
       </li>
     );
   }
