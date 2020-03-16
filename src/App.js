@@ -14,7 +14,9 @@ function App() {
       <TimeLog />
       <WeatherList />
       <GradeForm />
-      
+      <Grade />
+
+
     </div>
   );
 }
