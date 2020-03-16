@@ -39,14 +39,27 @@ class GradeForm extends Component {
         };
     
         // return an object that gives new value (to set state)
-        this.setState(prev => {
-          const newList = prev.grades.slice(0);
-          newList.push(newItem);
-          return {
-            grades: newList
-          };
-    
+        this.setState(currentState => {
+            return {
+                ...currentState, 
+                grades: [ 
+                    ...currentState.grades, 
+                    { 
+                        label: this.state.label,
+                        score: this.state.score,
+                        passing: pass
+                    }
+                ]
+            }
         });
+        // this.setState(prev => {
+        //   const newList = prev.grades.slice(0);
+        //   newList.push(newItem);
+        //   return {
+        //     grades: newList
+        //   };
+    
+        // });
       }
 
 
