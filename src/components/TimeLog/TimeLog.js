@@ -33,6 +33,14 @@ class TimeLog extends Component {
   render() {
     const total = this.state.entries.reduce((sum, entry) => sum + diffInSeconds(entry.end, entry.start), 0);
 
+
+    function handleKey(data) {
+
+      const key = Math.floor(Math.random() * 100) + '-' + data;
+      console.log(key);
+      return key;
+    }
+
     return (
 
 
@@ -46,7 +54,7 @@ class TimeLog extends Component {
         <div>
           {this.state.entries.map((data, i) =>
 
-            <TimeEntry start={data.start} key={data.start} end={data.end}
+            <TimeEntry start={data.start} key={handleKey(data.start)} end={data.end}
               onDelete={() => this.handleDelete(i)} />
 
           )}

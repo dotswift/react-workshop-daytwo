@@ -3,10 +3,12 @@ import { parseTime } from '../../timeUtil';
 
 class TimeForm extends Component {
 
-  state = {
+  INITIAL_STATE = {
     start: "",
     end: ""
-  }
+  };
+
+  state = this.INITIAL_STATE;
 
   handleChangeStart = (e) => {
     this.setState({
@@ -27,11 +29,7 @@ class TimeForm extends Component {
       end: parseTime(this.state.end)
     }
     this.props.onAdd(entry);
-    this.setState({
-      start: "",
-      end: ""
-    }
-    )
+    this.setState = this.INITIAL_STATE;
   }
 
   render() {
