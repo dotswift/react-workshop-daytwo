@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Weather from './components/Weather';
 import WeatherList from './components/WeatherList';
 import Grade from './components/Grade';
 import GradeForm from './components/GradeForm';

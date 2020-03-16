@@ -23,11 +23,18 @@ class WeatherList extends Component {
 
     render() {
 
+        function handleKey(data) {
+
+            const key = Math.floor(Math.random() * 100) + '-' + data;
+            console.log(key);
+            return key;
+          }
+
         return (
             <div className="WeatherList">
                 <WeatherForm onAdd={this.handleAddEntry} foo="bar"/>
                 {this.state.list.map((data, index) =>
-                    <Weather key={index} conditions={data.conditions} highF={data.highF} lowF={data.lowF} />
+                    <Weather key={handleKey(data.conditions)} conditions={data.conditions} highF={data.highF} lowF={data.lowF} />
                 )}
             </div>
         )
